@@ -4,7 +4,7 @@ export enum CATEGORIES {
   SERIES = 'SERIES',
   MOVIE = 'MOVIE',
 }
-export class VideoContent {
+export class VideoContentDto {
   @ApiProperty({ example: '604b537a-5ddb-2cd4-9c4e-8cccd248831d' })
   Id: string;
 
@@ -41,7 +41,7 @@ export class VideoContent {
   @ApiProperty()
   ProductionYear: number;
 
-  constructor(params: Partial<VideoContent>) {
+  constructor(params: Partial<VideoContentDto>) {
     Object.assign(this, params);
   }
 }
