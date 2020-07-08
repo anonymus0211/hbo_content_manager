@@ -164,8 +164,3 @@ const VideoForm = ({ onSubmit, onCancelClick, initialValues = false, readOnly = 
 }
 
 export default VideoForm
-
-const obj = {
-  "AvailabilityFromUtcIso": "2019-12-21T23:00:00Z",
-
-}
