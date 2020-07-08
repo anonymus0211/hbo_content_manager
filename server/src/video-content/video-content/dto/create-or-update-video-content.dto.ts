@@ -9,6 +9,7 @@ import {
   IsUrl,
   IsUUID,
 } from 'class-validator';
+import { Transform } from 'class-transformer';
 
 export class CreateOrUpdateVideoContentDto {
   @ApiPropertyOptional()
@@ -26,6 +27,7 @@ export class CreateOrUpdateVideoContentDto {
   @IsNumber()
   @Min(0)
   @Max(99)
+  @Transform(rating => parseInt(rating, 10))
   AgeRating: number;
 
   @ApiPropertyOptional({ example: '2019-12-21T23:00:00Z' })
@@ -71,6 +73,7 @@ export class CreateOrUpdateVideoContentDto {
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumber()
+  @Transform(year => parseInt(year, 10))
   ProductionYear: number;
 
   constructor(params) {

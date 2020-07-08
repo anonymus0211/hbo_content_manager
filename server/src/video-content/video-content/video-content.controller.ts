@@ -13,6 +13,7 @@ import {
   Body,
   Query,
   Logger,
+  BadRequestException,
 } from '@nestjs/common';
 import { VideoContentService } from './video-content.service';
 import { VideoContentDto } from './dto/video-content.dto';
@@ -50,7 +51,7 @@ export class VideoContentController {
     @Body() createVideoContent: CreateOrUpdateVideoContentDto,
   ) {
     Logger.log(
-      `Create new VideoContent called with payload(${JSON.stringify(
+      `Create new VideoContent with payload(${JSON.stringify(
         createVideoContent,
       )})`,
     );
